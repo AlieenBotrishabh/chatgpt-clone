@@ -1,7 +1,12 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import './dashboardlayout.css';
 
 const Dashboardlayout = () => {
+
+    const { userId, isLoaded } = useAuth();
+
+    const navigate = useNavigate();
+
     return (
         <div className='dashboard'>
             <div className='menu'>MENU</div>

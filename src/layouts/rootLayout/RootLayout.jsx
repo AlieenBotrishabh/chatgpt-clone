@@ -15,14 +15,12 @@ const RootLayout = () => {
         <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
         <div className='rootlayout'>
             <header>
-                <Link to="/">
                 <div className='logo'>
                 <img src="/logo.png" alt="" />
                 <span>LAMA AI</span>
                 </div>
-                </Link>
             </header>
-            <div className='user'>
+            {/* <div className='user'>
             <SignedOut>
         <SignInButton />
       </SignedOut>
@@ -30,7 +28,7 @@ const RootLayout = () => {
         <UserButton />
       </SignedIn>
 
-            </div>
+            </div> */}
             <main>
                 <Outlet />
             </main>

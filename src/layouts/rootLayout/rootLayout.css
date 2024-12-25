@@ -28,7 +28,8 @@
 
     main
     {
-        background-color: aqua;
+        /* background-color: aqua; */
         flex: 1;
+        overflow: hidden;
     }
 }
