@@ -1,18 +1,26 @@
 import { Outlet, useNavigate } from 'react-router-dom';
+import { useAuth } from '../dashboardLayout/AuthContext';
 import './dashboardlayout.css';
+import ChatList from '../../components/chatList/chatList/ChatList';
 
-const Dashboardlayout = () => {
-
-    const { userId, isLoaded } = useAuth();
-
+const DashboardLayout = () => {
+    const { user, isLoaded } = useAuth();
     const navigate = useNavigate();
 
-    return (
-        <div className='dashboard'>
-            <div className='menu'>MENU</div>
-            <div className='content'><Outlet /></div>
-        </div>
-    )
-}
+    // Redirect to login if user is not authenticated
+    if (!user && isLoaded) {
+        navigate('/login');
+        return null;
+    }
 
-export default Dashboardlayout;
+    return (
+        <div className='dashboardLayout'>
+            <div className='menu'><ChatList /></div>
+            <div className='content'>
+                <Outlet />
+            </div>
+        </div>
+    );
+};
+
+export default DashboardLayout;
