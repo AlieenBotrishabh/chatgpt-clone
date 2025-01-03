@@ -1,36 +1,38 @@
-import { Outlet } from 'react-router-dom';
 import './dashboardpage.css';
 
 const DashboardPage = () => {
     return (
-        <div className='dashboardPage'>
-            <div className='text'>MENU</div>
-            <div className='logo'>
-                <img src="/logo.png" alt="" />
-                <h1>LAMA AI</h1>
+        <div className="dashboardPage">
+          <div className="texts">
+            <div className="logo">
+              <img src="/logo.png" alt="" />
+              <h1>LAMA AI</h1>
             </div>
-            <div className='option'>
+            <div className="options">
+              <div className="option">
                 <img src="/chat.png" alt="" />
-                <span>Create a new Chat</span>
-            </div>
-            <div className='option'>
+                <span>Create a New Chat</span>
+              </div>
+              <div className="option">
                 <img src="/image.png" alt="" />
                 <span>Analyze Images</span>
-            </div>
-            <div className='option'>
+              </div>
+              <div className="option">
                 <img src="/code.png" alt="" />
-                <span>Help me with the code</span>
+                <span>Help me with my Code</span>
+              </div>
             </div>
-            <div className='formConatiner'>
-                <form>
-                    <input type="text" placeholder='Ask Me Anything' />
-                    <button>
-                        <img src="/arrow.png" alt="" />
-                    </button>
-                </form>
-            </div>
+          </div>
+          <div className="formContainer">
+            <form>
+              <input type="text" name="text" placeholder="Ask me anything..." />
+              <button>
+                <img src="/arrow.png" alt="" />
+              </button>
+            </form>
+          </div>
         </div>
-    )
-}
+      );
+};
 
 export default DashboardPage;
